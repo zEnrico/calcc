@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>simpol kalkyulaytor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #dad7df;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 650px;
+            margin: auto;
+            background: rgb(193, 214, 219);
+            padding: 25px;
+            border-radius: 12px;
+        }
+        h3 { 
+            text-align: center; 
+            color: #77162e; 
+            margin-top: 14px; 
+            font-weight: bold; 
+        }
+        label { 
+            display: block; 
+            margin-top: 14px; 
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #3100f2;
+            border-radius: 5px;
+        }
+        button {
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            color: rgb(253, 252, 252);
+            background: #00a0ff;
+            margin-top: 15px;
+        }
+        .buttons { 
+            display: flex; 
+            gap: 10px; 
+        }
+        .buttons button { 
+            flex: 1; 
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>simpol kalkyulaytor</h1>
+        
+        <h3>1st Num</h3>
+        <div>
+            <label>1st Num:</label>
+            <input type="number" id="n1">
+        </div>
+
+        <h3>2nd Num</h3>
+        <div>
+            <label>2nd Num:</label>
+            <input type="number" id="n2">
+        </div>
+
+        <div class="buttons">
+            <button onclick="calculate()">Calculate</button>
+        </div>
+
+        <div id="result" class="result">
+            <h3>Results</h3>
+            <p id="sum">Sum: </p>
+            <p id="difference">Difference: </p>
+            <p id="product">Product: </p>
+            <p id="quotient">Quotient: </p>
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            const num1 = document.getElementById("n1").value;
+            const num2 = document.getElementById("n2").value;
+
+            const n1 = Number(num1);
+            const n2 = Number(num2);
+
+            document.getElementById("sum").textContent = 
+                "Sum: " + (n1 + n2);
+
+            document.getElementById("difference").textContent = 
+                "Difference: " + (n1 - n2);
+
+            document.getElementById("product").textContent = 
+                "Product: " + (n1 * n2);
+
+            document.getElementById("quotient").textContent = 
+                n2 === 0 
+                ? "Quotient: Cannot be divide by zero" 
+                : "Quotient: " + (n1 / n2);
+        }
+    </script>
+</body>
+</html>
